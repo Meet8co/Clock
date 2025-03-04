@@ -1,6 +1,5 @@
 let is12HourFormat = false;
 let alarmTime = null;
-let alarmTimeout = null;
 
 function updateClock() {
   const now = new Date();
@@ -55,26 +54,6 @@ function clearAlarm() {
   alarmTime = null;
   document.getElementById('alarm-status').textContent = 'No alarm set.';
 }
-
-// Update Time Manually
-document.getElementById('update-time').addEventListener('click', () => {
-  const hourInput = parseInt(document.getElementById('hour-input').value, 10);
-  const minuteInput = parseInt(document.getElementById('minute-input').value, 10);
-  const secondInput = parseInt(document.getElementById('second-input').value, 10);
-
-  if (isNaN(hourInput) || isNaN(minuteInput) || isNaN(secondInput) {
-    alert('Please enter valid numbers for hours, minutes, and seconds.');
-    return;
-  }
-
-  const now = new Date();
-  now.setHours(hourInput);
-  now.setMinutes(minuteInput);
-  now.setSeconds(secondInput);
-
-  // Update the clock display
-  updateClock();
-});
 
 // Toggle 12-Hour Format
 document.getElementById('12-hour-toggle').addEventListener('change', (event) => {
